@@ -1,11 +1,14 @@
-Unter feingranularen TEEs versteht man das Konzept, ein Programm in mehrere separate Kompartimente zu unterteilen, die jeweils in sicheren, isolierten Enklaven ausgeführt werden. Anstatt eine monolithische TEE-Struktur zu verwenden, wird das Programm in mehrere kleine, aber voneinander getrennte Teile, zerlegt.
+Unter feingranularen TEEs versteht man das Konzept, nur bestimmte sicherheitskritische Teile eines Programms in isolierten Enklaven auszuführen, anstatt das gesamte Programm in einen gesicherten Kontext zu packen. Dies ermöglicht eine gezielte Absicherung einzelner Komponenten, ohne dass die gesamte Anwendung in TEEs laufen muss.
 
 \subsection{Vorteile feingranularer TEEs}
-
+Hinweis 23
 Daraus verspricht man sich mehrere Vorteile. Der offensichtlichste Vorteil ist die Minimierung der Angriffsfläche. Durch die Aufteilung des Programms in mehrere kleinere Kompartimente ist das Programm nicht mehr als Ganzes angreifbar, sondern nur noch die einzelnen, isolierten Kompartimente. Diese Trennung bedeutet, dass selbst wenn ein Angreifer erfolgreich in eine Enklave eindringen kann, der Zugang zu den anderen Programmen erheblich eingeschränkt ist. 
 
-Zusätzlich vertrauen sich die einzelnen Kompartimente nicht mehr selber. Jede Enklave operiert unabhängig und sicher, ohne auf die Integrität der anderen angewiesen zu sein. Durch diese Eigenschaften ermöglicht die feingranulare Struktur außerdem die Isolierung von Schwachstellen. Sicherheitslücken in einem Kompartiment haben keine Auswirkung auf die übrigen Kompartimente. Ein erfolgreicher Angriff auf eine ein einzelnes Kompartiment kann daher keine oder nur wenige Daten freigeben.
+Zusätzlich vertrauen sich die einzelnen Kompartimente nicht mehr Gegenseitig.
 
-Darüber hinaus erlaubt die feingranulare Struktur die Möglichkeit der Implementierung unterschiedlicher Sicherheitsstandards für einzelne Enklaven. Bei der einzelnen Aufteilung des Programms kann statisch ermittelt werden, welche Teile aufgeteilt werden können und welche besonders kritische Funktionen enthalten. Dies ermöglicht eine präzisere Kontrolle darüber, welche Enklave welche Funktion aufruft und aufrufen darf. Durch diese Trennung ist das Gesamtsystem transparenter und kann besser geschützt, kontrolliert und verwaltet werden.
+Jede Enklave operiert unabhängig und sicher, ohne auf die Integrität der anderen angewiesen zu sein. Durch diese Eigenschaften ermöglicht die feingranulare Struktur außerdem die Isolierung von Schwachstellen. Sicherheitslücken in einem Kompartiment haben keine Auswirkung auf die übrigen Kompartimente. Ein erfolgreicher Angriff auf eine ein einzelnes Kompartiment kann daher keine oder nur wenige Daten freigeben.
+
+Darüber hinaus erlaubt die feingranulare Struktur die Möglichkeit der Implementierung unterschiedlicher Sicherheitsstandards für einzelne Enklaven. Bei der einzelnen Aufteilung des Programms kann statisch ermittelt werden, welche Teile aufgeteilt werden können und welche besonders kritische Funktionen enthalten.
+Hinweis 26
 
 Zusammengefasst bieten fein granulare TEEs durch die Reduzierung der Angriffsfläche, die Isolierung von Schwachstellen, die gegenseitige Unabhängigkeit der Kompartimente und die Möglichkeit, spezialisierte Sicherheitsstandards zu implementieren, eine flexible, transparente und robuste Verbesserung der Sicherheit moderner Systeme.
