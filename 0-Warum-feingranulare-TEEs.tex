@@ -1,0 +1,24 @@
+Ein wichtiger Begriff im Zusammenhang von TEEs ist die Trusted Computational Base (TCB). Die TBC beschreibt den Bereich eines Programms, der besonders vor externen Angriffen geschützt werden muss, da er mit sensiblen Daten arbeitet oder andere kritischen Funktionen übernimmt. 
+
+Wird nun ausschließlich dieser Teil der Anwendung in einer TEE ausgeführt, wird von einer feingranularen TEE gesprochen. In einer feingranularen TEE läuft also nicht das gesamte Programm, sondern nur ein spezifischer Teil davon. 
+
+Außerdem können mehrere feingranulare TEEs genutzt werden, indem mehrere kritische Funktionen in separaten TEEs ausgeführt werden, was die Sicherheit weiter erhöhen kann. Unabhängig von der Anzahl der verwendeten TEES, bieten sie mehrere Vorteile.
+
+\subsection{Minimierung der Angriffsfläche}
+Der Hauptgrund für die Verwendung von TEEs ist die Minimierung der Angriffsfläche. Diese Minimierung wird erzielt, da der Prozess, der innerhalb einer sicheren Enklave läuft, keinen uneingeschränkten Zugriff auf externe Ressourcen hat. 
+
+Ebenso haben Programme in der unsicheren Umgebung keinen direkten Zugriff auf Daten, die innerhalb der sicheren Enklave verarbeitet werden. Da TEEs in diesem Kontext als Kompartiments behandelt werden können, gibt es für die Kommunikation zwischen sicherer und unsicherer Welt eine definierte Schnittstelle, auch als API bekannt. 
+
+Diese Schnittstelle ermöglicht es, genau zu kontrollieren, welche Daten und in welchem Format sie von außen akzeptiert werden. Obwohl diese Schnittstelle die Sicherheit erhöht, stellt die API-Schnittstelle einen potenziellen Angriffsvektor dar und führt zu einer neuen Klasse von Sicherheitsproblemen, den Compartment Interface Vulnerabilities (CIVs).
+
+\subsection{Isolierung von Schwachstellen}
+Eine weitere wichtige Eigenschaft feingranularer TEEs ist ihre Fähigkeit zur Isolierung von Schwachstellen. Jedes Kompartiment operiert unabhängig und sicher, ohne auf die Integrität anderer Kompartimente angewiesen zu sein. 
+
+Dadurch haben Sicherheitslücken in einem Kompartiment keine Auswirkungen auf die anderen. Je mehr Kompartimente eingesetzt werden, desto widerstandsfähiger wird das gesamte System gegen Angriffe. Allerdings steigt mit der Anzahl der feingranularen TEEs auch der Aufwand für die Erstellung, Überprüfung und Verwaltung der Daten sowie der gesamte Overhead. Dennoch kann ein erfolgreicher Angriff auf ein einzelnes Kompartiment möglicherweise nur einen Teil der Daten kompromittieren, während der Rest des Systems sicher bleibt.
+
+\subsection{Unterschiedliche Sicherheitsstandards}
+Ein Ziel neben der weiteren Minimierung der Angriffsfläche könnte die Einführung von verschiedenen Sicherheitsprofilen sein. Diese Strategie beinhalten nicht nur die Berücksichtigung der Interaktion zwischen den Kompartimenten bei ihrer Identifizierung, sondern auch die Festlegung welche Funktionen geschützt werden müssen und welche nicht.
+
+Werden mit diesem Gedanken mehrere Kompartimente erstellt, können unterschiedliche Sicherheitsstandards eingeführt werden. So wird bei den Kompartimenten, in denen kritische Funktionen ausgeführt werden, besonders auf die Sicherheit geachtet. Durch diese Implementierung ist es möglich den Overhead von TEEs zu reduzieren, während ein nahezu gleiches Sicherheitsniveau beibehalten wird.
+
+Erwähnenswert ist auch, dass bei der Identifizierung der Funktionen überprüft werden kann, ob bestimmte Funktionen einen ausschließlich lesenden oder schreibenden Zugriff erfordern. Funktionen mit einer dieser Eigenschaft können nicht zu Datenlecks oder Datenkorruption führen.

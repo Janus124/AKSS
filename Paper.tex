@@ -10,59 +10,39 @@
     \country{}}
 \makeatletter
 
-\let\@authorsaddresses\@empty
+\let\@authorsaddresses\@empty 
 \makeatother
 \pagestyle{plain}
 \settopmatter{printacmref=false}
 \settopmatter{printfolios=false}
+
+\setlength{\parindent}{0pt} %%stoppt die Einrückung
+
 \begin{document}
 
 \maketitle  % Dieser Befehl erzeugt den Titel, Autor und Datum im Dokument
 
-\input{abstract}
+%%Für die Seitennummerierung
+\thispagestyle{plain} %%damit auch die erste seite eine 1 hat
+\pagenumbering{arabic}
+\pagestyle{plain} %%???
 
+\input{0-Abstract.tex}
 
 \section{Idee}
-
-\input{idee.tex}
+\input{0-Idee.tex}
 
 \section{Grundlagen}
+\input{0-Grundlagen.tex}
 
-\input{grundlagen}
+\section{Warum feingranulare TEEs?}
+\input{0-Warum-feingranulare-TEEs.tex}
 
-\section{Sicherheitsprobleme von TEEs}
+\section{Sicherheitsprobleme von feingranularen TEEs}
+\input{0-Sicherheitsprobleme-von_feingranularen-TEEs.tex}
 
-\input{sicherheitsprobleme_von_TEEs.tex}
-
-\section{Feingranulare TEEs}
-
-\input{feingranulareTEEs.tex}
-
-\subsection{Sicherheitsprobleme feingranularer TEEs}
-Problem + Lösung, wenn vorhanden
-
-\subsection{Ziel von feingranularer TEEs}
-Idealfall/Wunsch
-
-\section{Fazit} 
-
-große Änderung durch feingranularen TEEs?
-Fazit von meinem Text
-
-Fazit vom den 2 vorgegeben Paper + mögliche Fehler in der Arbeit/denkweise (z.B. --> nur Poof of concept, Sicherheitslücken wurden gepatcht)
-
-
-
-
-
-
-
-
-
-\section*{Bemerkungen}
-das Referenzieren mit BibTeX muss ich mir noch machen.\\
-bei 3. kann/soll ich so zittieren "Jo Van Bulck et al haben ..."? In den Arbeiten letztes Semster wurde es unter anderem so gemacht.
-\\
+\section{Fazit}
+\input{0-Fazit.tex}
 
 
 \end{document}
