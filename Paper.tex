@@ -2,7 +2,7 @@
 \renewcommand\footnotetextcopyrightpermission[1]{}
 \usepackage{graphicx}
 \bibliographystyle{plain}
-\title{TThe Devil is in the Detail: Issues with Fine-Grained Trusted Execution Environments}
+\title{The Devil is in the Detail: Issues with Fine-Grained Trusted Execution Environments}
 \author{Jonathan Adshead}
 \email{jonathan.adshead@fau.de}
 \affiliation{
@@ -16,20 +16,27 @@
 \settopmatter{printacmref=false}
 \settopmatter{printfolios=false}
 
+\acmConference[FAU]{Make sure to enter the correct
+  conference title from your rights confirmation emai}{Mai 2024}{Erlangen, Deutschland}
+
 \setlength{\parindent}{0pt} %%stoppt die Einrückung
 
 \begin{document}
 
 \maketitle  % Dieser Befehl erzeugt den Titel, Autor und Datum im Dokument
 
+
 %%Für die Seitennummerierung
-\thispagestyle{plain} %%damit auch die erste seite eine 1 hat
-\pagenumbering{arabic}
-\pagestyle{plain} %%???
+%%\thispagestyle{plain} %%damit auch die erste seite eine 1 hat
+%%\pagenumbering{arabic}
+%%\pagestyle{plain} %%???
+
+%%\renewcommand{\shortauthors}{Trovato et al.}
+
 
 \input{0-Abstract.tex}
 
-\section{Idee}
+\section{Einleitung}
 \input{0-Idee.tex}
 
 \section{Grundlagen}
@@ -44,6 +51,12 @@
 \section{Fazit}
 \input{0-Fazit.tex}
 
+\newpage
+
 %references
-\bibliography{plain.bib}
+\bibliography{bibtex.bib}
 \end{document}
+
+
+
+%%Ort der Bilder?

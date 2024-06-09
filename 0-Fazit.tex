@@ -1,11 +1,18 @@
-ToDo: Fazit zu meinem Paper
 
-\subsection{A Tale of Two Worlds: Assessing the Vulnerability of Enclave
-Shielding Runtimes}
+Die Verbesserung der Sicherheit und Robustheit von Trusted Execution Environments (TEEs) ist essenziell, um Angriffe zu verhindern, die Rückschlüsse auf das Speicherlayout ermöglichen oder direkten Zugriff auf spezifische Daten gewähren. Diese Angriffe gefährden die Vertraulichkeit und Integrität der gespeicherten Informationen erheblich. Darüber hinaus untergraben Angriffe, die die Funktionalität der TEEs beeinflussen, das Vertrauen in diese Technologie. Das primäre Ziel von TEEs besteht darin, die Angriffsfläche zu minimieren und somit die Sicherheit zu erhöhen.
 
-Meinung zum Paper
+Kleinere und leichter zu verwaltende TEEs bieten verbesserte Sicherheit und Isolation, da sie weniger Funktionen übernehmen und somit weniger Daten sicher halten müssen. Diese Reduktion in der Komplexität erleichtert ihre Entwicklung und Verwaltung und verringert potenzielle Fehlerquellen. Zukünftige Entwicklungen sollten darauf abzielen, die Angriffsfläche weiter zu minimieren und eine noch bessere Isolation zu erreichen. Die Implementierung unterschiedlicher Sicherheitsstandards ist ein weiterer wichtiger Aspekt, insbesondere für feingranulare TEEs.
 
-\subsection{Assessing the Impact of Interface Vulnerabilities in
-Compartmentalized Software}
+Um diese Ziele zu erreichen, ist noch viel Forschungsarbeit notwendig. 
+Angriffe, die zu Datenlecks oder Datenkorruption führen können, müssen identifiziert und verhindert werden. Seitenkanalangriffe können nicht vollständig unterbunden werden, daher sind Techniken erforderlich, die diese Kanäle so sicher wie möglich implementieren. 
+Trotz aller Anstrengungen wird es immer Angriffsmöglichkeiten geben. Selbst die sicherste TEE kann durch einen kleinen Fehler, einem kleinen Detail, angreifbar werden. Diese Unsicherheit verdeutlicht die Notwendigkeit kontinuierlicher Forschung und Entwicklung, um die Sicherheit von TEEs stetig zu verbessern und anzupassen.
 
-Meinung zum Paper
+Im Bereich von feingranularen TEEs wurde schon viel geforscht, muss aber auch noch viel geforscht werden, um die Angriffsfläche weiter zu reduzieren und den Zugriff auf Daten schwerer zu gestalten.
+\\
+Dieses Paper basiert hauptsächlich auf den Arbeiten "Assessing the Impact of Interface Vulnerabilities in Compartmentalized Software"\cite{CIVPaper} und "A Tale of Two Worlds: Assessing the Vulnerability of Enclave Shielding Runtimes"\cite{TEEPaper}. 
+Das erstgenannte Paper klassifiziert Sicherheitslücken zwischen Kompartments (CIV) und untersucht, wo diese auftreten. Aufgrund der Art und Weise der Untersuchung, wird aber lediglich die Schnittstelle zwischen Bibliotheken und Anwendung untersucht. 
+Alle daraus gewonnenen Rohdaten werden tabellarisch im Paper dargestellt. 
+Diese Betrachtung sind für das Verständnis der Sicherheitsprobleme in TEEs von grundlegender Bedeutung.
+
+Das andere Paper stellt zehn direkte Angriffsvektoren vor und erklärt, wie diese sich auf die bekanntesten TEEs auswirken. Hier muss erwähnt werden, dass diese nur theoretisch, mit Codebespiel vorgestellt und nicht mit Zahlen belegt werden.
+Die beiden Paper ergänzen sich, indem das erste Kategorien einführt, die vom anderen Paper unterstützt werden. Zusammen bieten sie ein umfassenderes Bild der potenziellen Sicherheitslücken in feingranularen TEEs und tragen damit zur weiteren Entwicklung sicherer TEE-Technologien bei. 
