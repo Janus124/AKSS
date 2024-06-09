@@ -1,5 +1,12 @@
 \documentclass[sigconf]{acmart}
 \renewcommand\footnotetextcopyrightpermission[1]{}
+\usepackage{csquotes}
+
+%%für Deutsch
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}  % Fügt das Babel-Paket für deutsche Sprache hinzu
+
 \usepackage{graphicx}
 \bibliographystyle{plain}
 \title{The Devil is in the Detail: Issues with Fine-Grained Trusted Execution Environments}
@@ -42,7 +49,7 @@
 \section{Grundlagen}
 \input{0-Grundlagen.tex}
 
-\section{Warum feingranulare TEEs?}
+\section{Ziele von feingranularen TEEs}
 \input{0-Warum-feingranulare-TEEs.tex}
 
 \section{Sicherheitsprobleme von feingranularen TEEs}
