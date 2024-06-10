@@ -6,7 +6,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}  % Fügt das Babel-Paket für deutsche Sprache hinzu
-
+\usepackage{titlesec}
 \usepackage{graphicx}
 \bibliographystyle{plain}
 \title{The Devil is in the Detail: Issues with Fine-Grained Trusted Execution Environments}
@@ -27,6 +27,9 @@
   conference title from your rights confirmation emai}{Mai 2024}{Erlangen, Deutschland}
 
 \setlength{\parindent}{0pt} %%stoppt die Einrückung
+
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
 \begin{document}
 

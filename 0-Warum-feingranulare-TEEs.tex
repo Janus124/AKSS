@@ -1,4 +1,4 @@
-Ein wichtiger Begriff im Zusammenhang von TEEs ist die Trusted Computing Base (TCB). Die TCB beschreibt den Bereich eines Programms, der besonders vor externen Angriffen geschützt werden muss, da er mit sensiblen Daten arbeitet oder andere kritische Funktionen übernimmt, wie z.B. das Interagieren mit sensiblen Daten. Wird nun ausschließlich dieser Teil der Anwendung in einer TEE ausgeführt, wird von einer feingranularen TEE gesprochen.
+Ein wichtiger Begriff im Zusammenhang von TEEs ist die Trusted Computing Base (TCB). Die TCB beschreibt den Bereich eines Programms, der besonders vor externen Angriffen geschützt werden muss, da er mit sensiblen Daten arbeitet oder andere kritische Funktionen übernimmt, wie z. B. das Interagieren mit sensiblen Daten. Wird nun ausschließlich dieser Teil der Anwendung in einer TEE ausgeführt, wird von einer feingranularen TEE gesprochen.
 
 Außerdem können mehrere feingranulare TEEs genutzt werden, indem mehrere kritische Funktionen in separaten TEEs ausgeführt werden, was die Sicherheit weiter erhöhen kann.
 
@@ -7,16 +7,10 @@ Das Hauptziel für die Verwendung von feingranularen TEEs ist die Minimierung de
 
 Programme aus der unsicheren Umgebung haben keinen direkten Zugriff auf Daten, die innerhalb der sicheren Enklave verarbeitet werden. Da feingranulare TEEs in diesem Kontext als Kompartimente behandelt werden können, gibt es für die Kommunikation zwischen sicherer und unsicherer Welt eine definierte Schnittstelle, auch als Enklave Description Language (EDL) bekannt. 
 
-Diese Schnittstelle ermöglicht es, genau zu kontrollieren, welche Daten und in welchem Format diese Daten von außen akzeptiert werden. Obwohl diese Schnittstelle die Sicherheit erhöht, stellt sie dafür einen neuen Angriffsvektor dar und führt zu einer neuen Klasse von Sicherheitsproblemen, den Compartment Interface Vulnerabilities (CIVs)\cite{CIVPaper}.
+Diese Schnittstelle ermöglicht es, genau zu kontrollieren, welche Daten und in welchem Format diese Daten von außen akzeptiert werden. Obwohl diese Schnittstelle die Sicherheit erhöht, stellt sie dafür einen neuen Angriffsvektor dar und führt zu einer neuen Klasse von Sicherheitsproblemen, den Compartment Interface Vulnerabilities (CIVs) \cite{CIVPaper}.
 
 \subsection{Isolierung von Schwachstellen}
-Ein weiteres wichtiges Ziel feingranularer TEEs ist ihre Fähigkeit zur Isolierung von Schwachstellen. Jedes Kompartiment operiert unabhängig und sicher, ohne auf die Integrität anderer Kompartimente angewiesen zu sein. 
+Ein weiteres wichtiges Ziel feingranularer TEEs ist ihre Fähigkeit zur Isolierung von Schwachstellen. Ziel ist es, die Kompartimente sicherer zu machen und in der Zukunft die Unabhängigkeit der Kompartimente voneinander zu erreichen.
+
 
 Es wird immer weiter darauf hingearbeitet, dass Sicherheitslücken in einem Kompartiment keine Auswirkungen auf die anderen Kompartimente haben und so eine Isolation der Sicherheitslücken entsteht. Je mehr Kompartimente eingesetzt werden, desto widerstandsfähiger wird das gesamte System gegen Angriffe. Allerdings steigt mit der Anzahl der feingranularen TEEs auch der Aufwand für die Erstellung, Überprüfung und Verwaltung der Daten sowie der gesamte Overhead. Dennoch kann ein erfolgreicher Angriff auf ein einzelnes Kompartiment möglicherweise nur einen Teil der Daten kompromittieren, während der Rest des Systems sicher bleibt.
-
-\subsection{Unterschiedliche Sicherheitsstandards}
-Ein Ziel neben der weiteren Minimierung der Angriffsfläche könnte die Einführung von verschiedenen Sicherheitsprofilen sein. Diese Strategie beinhalten nicht nur die Berücksichtigung der Interaktion zwischen den Kompartimenten bei ihrer Identifizierung, sondern auch die Festlegung, welche Funktionen geschützt werden müssen und welche nicht.
-
-Werden mit diesem Gedanken mehrere Kompartimente erstellt, können unterschiedliche Sicherheitsstandards eingeführt werden. So wird bei den Kompartimenten, in denen kritische Funktionen ausgeführt werden, besonders auf die Sicherheit geachtet. Durch diese Implementierung wird es hoffentlich in Zukunft möglich sein, den Overhead von TEEs immer weiter zu reduzieren, während ein ähnliches Sicherheitsniveau beibehalten wird.
-
-Erwähnenswert ist auch, dass bei der Identifizierung der Funktionen überprüft werden kann, ob bestimmte Funktionen einen ausschließlich lesenden oder schreibenden Zugriff erfordern. Funktionen mit einer dieser Eigenschaft können nicht zu Datenlecks oder Datenkorruption führen, da sie entweder nur Daten lesen oder nur schreiben. Wobei beim Lesen keine Daten nach außen gelangen und beim Schreiben kein Angreifer beeinflussen kann, was geschrieben wird. 

@@ -1,12 +1,12 @@
 Die TEE zeichnet sich durch drei wesentliche Eigenschaften aus, die ihre Funktionalität und Sicherheit beschreiben. 
-Sie gewährleistet (1) die Authentizität des ausgeführten Codes, indem sie sicherstellt, dass dieser tatsächlich von der beabsichtigten Quelle stammt und nicht manipuliert wurde. 
+Sie gewährleistet (1) die Authentizität des ausgeführten Codes.
 Ein wichtiger Aspekt dabei ist die Möglichkeit der Remote Attestation. Diese erlaubt es, die Authentizität des Codes aus der Ferne zu verifizieren. 
-Die TEE sichert (2) die Integrität des Codes, indem sie während der Ausführung sicherstellt, dass dieser nicht verändert wurde. Außerdem schützt sie (3) die Vertraulichkeit von Code, Daten und Laufzeitvariablen, indem sie sicherstellt, dass diese nur von privilegierten Parteien eingesehen werden kann\cite{Trusted}.
+Die TEE sichert (2) die Integrität des Codes, indem sie gewähleistet, dass dieser nicht verändert wurde. Außerdem schützt sie (3) die Vertraulichkeit von Code, Daten und Laufzeitvariablen~\cite{Trusted}.
 
 Aufgrund der Interaktion von Programmen innerhalb der TEE mit Programmen außerhalb, kann die TEE auch als Kompartiment betrachtet werden. Diese Struktur ermöglicht eine klare Trennung zwischen den unterschiedlichen Kompartiments und ermöglicht so eine bessere Kontrolle über den Zugriff.
 
 \subsection{Trusted Execution Environment}
-Der genaue Aufbau und das Verhalten von TEEs variiert, lässt sich aber, wie in Abbildung \ref{fig:TEE} zu sehen ist, im Allgemeinen in zwei Kategorien einteilen: (1) die Single-World-TEEs, die sich einen Adressraum mit dem unprivilegierten Host teilen, und (2) die Two-Worlds-TEEs, bei denen die CPU konzeptionell in eine normale und eine sichere Welt unterteilt ist\cite{TEEPaper}.
+Der genaue Aufbau und das Verhalten von TEEs variiert, lässt sich aber, wie in Abbildung~\ref{fig:TEE} zu sehen ist, im Allgemeinen in zwei Kategorien einteilen: (1) die Single-World-TEEs, die sich einen Adressraum mit dem unprivilegierten Host teilen, und (2) die Two-Worlds-TEEs, bei denen die CPU konzeptionell in eine normale und eine sichere Welt unterteilt ist~\cite{TEEPaper}.
 
 \begin{figure}[h]
     \centering
@@ -28,16 +28,16 @@ Diese Methode bietet eine stärkere Isolation und somit ein höheres Maß an Sic
 
 In beiden Kategorien gewährleistet sowohl der Prozessor, dass extern kein Zugriff auf die Daten möglich ist, als auch das TOS, dass der Code in der Enklave sicher ist. Das TOS übernimmt außerdem den Entry/Exit Prozess der TEE, in dem der Übergang zwischen der normalen und der sicheren Welt ausgeführt wird. 
 
-Neben den Angriffen auf das Application Binary Interface (ABI), welche auf Schwachstellen beim Erstellen und Verlassen der TEE abzielen, gibt es auch Angriffe auf das Application Programming Interface (API), welche versuchen Sicherheitslücken während der Laufzeit zu nutzen\cite{TEEPaper}.
+Neben den Angriffen auf das Application Binary Interface (ABI), welche auf Schwachstellen beim Erstellen und Verlassen der TEE abzielen, gibt es auch Angriffe auf das Application Programming Interface (API), welche versuchen Sicherheitslücken während der Laufzeit zu nutzen~\cite{TEEPaper}.
 
-Ein weiterer Grundgedanke beim Designen einer TEE ist das Angreifer Model. Die TEE wird unter der Annahme entwicklent, dass sie in einem System ausgeführt wird, das als kompromittiert betrachtet wird und Angreifer die volle Kontrolle über sämtliche Hardware haben.
+Das Angreifermodell ist ein weiterer Grundgedanke beim Entwurf einer TEE. Die TEE wird unter der Annahme entwicklent, dass sie in einem System ausgeführt wird, das als kompromittiert betrachtet wird und Angreifer die volle Kontrolle über sämtliche Hardware haben.
 
 
 \subsection{Kompartimentierung}
 
-Die Kompartimentierung ist ein Konzept, das darauf abzielt, ein Computersystem oder einzelne Anwendungen in separate Bereiche aufzuteilen und diese möglichst isoliert voneinander operieren zu lassen. Diese Praxis beruht auf den Prinzipien der Sandbox und der Safebox, die eine sicherere und stabilere Systemumgebung ermöglichen\cite{CIVPaper}. Ein Kompartiment agiert als Safebox und behandelt alle anderen Programme als Sandbox. So wird kein Zugriff auf die eigenen Daten erlaubt.
+Die Kompartimentierung ist ein Konzept, das darauf abzielt, ein Computersystem oder einzelne Anwendungen in separate Bereiche aufzuteilen und diese möglichst isoliert voneinander operieren zu lassen. Diese Praxis beruht auf den Prinzipien der Sandbox und der Safebox, die eine sicherere und stabilere Systemumgebung ermöglichen. Ein Kompartiment agiert als Safebox und behandelt alle anderen Programme als Sandbox. So wird kein Zugriff auf die eigenen Daten erlaubt.
 
-Eine Sandbox ist, wie in Abbildung \ref{fig:Sandbox} dargestellt, eine isolierte Ausführungsumgebung, in der ein Programm ausgeführt wird, welches keinen Zugriff auf Daten anderer Programme hat. 
+Eine Sandbox ist, wie in Abbildung~\ref{fig:Sandbox} dargestellt, eine isolierte Ausführungsumgebung, in der ein Programm ausgeführt wird, welches keinen Zugriff auf Daten anderer Programme hat. 
 Dies gewährleistet nicht nur die Sicherheit sensibler Informationen, sondern verhindert auch die Übernahme von Daten oder die Beeinflussung des Programmes durch potenziell kompromittierte Softwareteile. 
 Ein bekanntes Beispiel dafür wäre eine Virtuelle Maschine (VM). Diese wird in einer isolierten Umgebung ausgeführt und hat keinen Zugriff auf jegliche Daten außerhalb der Sandbox.
 
@@ -48,7 +48,7 @@ Ein bekanntes Beispiel dafür wäre eine Virtuelle Maschine (VM). Diese wird in 
     \label{fig:Sandbox}
 \end{figure}
 
-Im Gegensatz dazu dient die Safebox, in Abbildung \ref{fig:Safebox} dargestellt, dem Schutz der eignen Daten. Dies wird ermöglicht, indem nur privilegierten Prozessen Zugriff auf die Daten gestattet wird. Diese Zugangskontrolle verhindert den Zugriff auf Daten eines anderen Kompartiments. 
+Im Gegensatz dazu dient die Safebox, in Abbildung~\ref{fig:Safebox} dargestellt, dem Schutz der eignen Daten. Dies wird ermöglicht, indem nur privilegierten Prozessen Zugriff auf die Daten gestattet wird. Diese Zugangskontrolle verhindert den Zugriff auf Daten eines anderen Kompartiments. 
 Dies spiegelt genau die Funktionsweise einer Enklave wieder, in der Programme innerhalb vollen Zugriff haben, aber die Daten ist für Programme aus der unsicheren Welt nicht lesbar.
 \begin{figure}[h]
     \centering
@@ -59,9 +59,9 @@ Dies spiegelt genau die Funktionsweise einer Enklave wieder, in der Programme in
 
 Das Initialisieren eines Kompartments lässt sich in 3 Stufen unterteilen. Zunächst erfolgt die Identifizierung, bei der festgelegt wird, an welcher Stelle das Programm logisch gut unterteilt werden kann und wie feingranular diese Unterteilung sein soll.
 Anschließend wird die Durchsetzung der Grenzen vorgenommen, indem die Programme logisch voneinander getrennt und ausschließlich über eine API zur Kommunikation zugelassen werden. 
-In der letzten Stufe werden diese Grenzen weiter verhärtet. Hierbei wird die API-Schnittstellen weiter definiert, wie z.B. die Return Values und Pointer.
+In der letzten Stufe werden diese Grenzen weiter verhärtet. Hierbei wird die API-Schnittstellen weiter definiert, wie z. B. die Rückgabewerte und Pointer.
 
-Wie in Abbildung \ref{fig:Kompartment} dargestellt, können Applikatonen in verschiedenen Kompartimenten nur über eine wohldefinierte API untereinander Daten austauschen.
+Wie in Abbildung~\ref{fig:Kompartment} dargestellt, können Applikatonen in verschiedenen Kompartimenten nur über eine wohldefinierte API untereinander Daten austauschen.
 
 \begin{figure}[h]
     \centering
