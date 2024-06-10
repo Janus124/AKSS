@@ -1,15 +1,7 @@
-ToDo: Neu machen!!!\\
-
-
-
 Dieses Paper basiert hauptsächlich auf den Arbeiten \enquote{Assessing the Impact of Interface Vulnerabilities in Compartmentalized Software}~\cite{CIVPaper} und \enquote{A Tale of Two Worlds: Assessing the Vulnerability of Enclave Shielding Runtimes}~\cite{TEEPaper}. 
 
-Das erstgenannte Paper
+Das erstgenannte Paper klassifiziert Sicherheitslücken zwischen Kompartiments [CIV] und untersucht deren Auftreten. Durch den Einsatz eines Fuzzers, ein automatisiertes Programmes zur Indentifkation von Schwachstellen, wird getestet, ob angreifbare Funktionen existieren. Aufgrund der Art und Weise der Untersuchung, wird aber lediglich die Schnittstelle zwischen Bibliotheken und Anwendung untersucht. Diese Einschränkung kann jedoch potenzielle Schwachstellen in der Interaktion zwischen anderen Systemkomponenten übersehen.
 
+Im Gegensatz zu dieser praktischen Identifikation von Schwachstellen untersucht das andere Paper die Auswirkung von 10 Angriffen auf die bekanntesten TEES und beschreibt deren Auftreten. Ein Aspekt dieser Untersuchung ist die theoretische Analyse der Angriffe, die durch konkrete Codebeispiele unterstützt wird. 
 
-Das erstgenannte Paper klassifiziert Sicherheitslücken zwischen Kompartments (CIV) und untersucht, wo diese auftreten. Aufgrund der Art und Weise der Untersuchung, wird aber lediglich die Schnittstelle zwischen Bibliotheken und Anwendung untersucht. 
-Alle daraus gewonnenen Rohdaten werden tabellarisch im Paper dargestellt. 
-Diese Betrachtung sind für das Verständnis der Sicherheitsprobleme in TEEs von grundlegender Bedeutung.
-
-Das andere Paper stellt zehn direkte Angriffsvektoren vor und erklärt, wie diese sich auf die bekanntesten TEEs auswirken. Hier muss erwähnt werden, dass diese nur theoretisch, mit Codebespiel vorgestellt und nicht mit Zahlen belegt werden.
-Die beiden Paper ergänzen sich, indem das erste Kategorien einführt, die vom anderen Paper unterstützt werden. Zusammen bieten sie ein umfassenderes Bild der potenziellen Sicherheitslücken in feingranularen TEEs und tragen damit zur weiteren Entwicklung sicherer TEE-Technologien bei. 
+Interessanterweise zeigen die in der ersten Arbeit identifizierten kompartimentären Kategorien von Sicherheitslücken eine hohe Übertragbarkeit auf die Angriffsvektoren in TEEs. Dies unterstreicht nicht nur die Relevanz der Kategorien, sondern auch die Möglichkeit, TEEs in diesem Kontext als eine Form von Kompartimenten zu betrachten. Diese Erkenntnis unterstützt die Gültigkeit der in der ersten Arbeit entwickelten Klassifikationen und bietet eine solide Grundlage für die weitere Untersuchung der Sicherheitsprobleme in feingranularen TEEs.

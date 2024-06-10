@@ -3,9 +3,9 @@ Ein wichtiger Begriff im Zusammenhang von TEEs ist die Trusted Computing Base (T
 Außerdem können mehrere feingranulare TEEs genutzt werden, indem mehrere kritische Funktionen in separaten TEEs ausgeführt werden, was die Sicherheit weiter erhöhen kann.
 
 \subsection{Minimierung der Angriffsfläche}
-Das Hauptziel für die Verwendung von feingranularen TEEs ist die Minimierung der Angriffsfläche und damit die Erhöhung der Sicherheit, die sie liefert. 
+Das Hauptziel für die Verwendung von feingranularen TEEs ist die Minimierung der Angriffsfläche und damit die Erhöhung der Sicherheit. 
 
-Programme aus der unsicheren Umgebung haben keinen direkten Zugriff auf Daten, die innerhalb der sicheren Enklave verarbeitet werden. Da feingranulare TEEs in diesem Kontext als Kompartimente behandelt werden können, gibt es für die Kommunikation zwischen sicherer und unsicherer Welt eine definierte Schnittstelle, auch als Enklave Description Language (EDL) bekannt. 
+Programme aus der unsicheren Umgebung haben keinen direkten Zugriff auf Daten, die innerhalb der sicheren Enklave verarbeitet werden. Da feingranulare TEEs in diesem Kontext als Kompartimente behandelt werden können, gibt es für die Kommunikation zwischen sicherer und unsicherer Welt eine definierte Schnittstelle, die durch die als Enklave Description Language (EDL) beschrieben wird. 
 
 Diese Schnittstelle ermöglicht es, genau zu kontrollieren, welche Daten und in welchem Format diese Daten von außen akzeptiert werden. Obwohl diese Schnittstelle die Sicherheit erhöht, stellt sie dafür einen neuen Angriffsvektor dar und führt zu einer neuen Klasse von Sicherheitsproblemen, den Compartment Interface Vulnerabilities (CIVs) \cite{CIVPaper}.
 
